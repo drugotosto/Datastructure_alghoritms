@@ -4,9 +4,9 @@ import com.ferrero.dataStructures.queue.BasicQueue;
 
 public class BasicStack<X> implements CustomStack<X> {
 
-    // Tale array che rappresenta lo stack che contiene i generici dati di tipo "X"
+    // Array che contiene i generici dati di tipo "X" dello stack
     private X[] data;
-    // Rappresenta il puntatore alla cima dello stack rappresentato dall'array "data" (punta al primo posto vuoto disponibile)
+    // Puntatore alla testa dello stack da dove si inseriscono e prelevano gli elementi (punta al primo posto vuoto disponibile all'interno dell'array "data")
     private int stackPointer;
 
     public BasicStack() {
@@ -17,6 +17,7 @@ public class BasicStack<X> implements CustomStack<X> {
         this.data = (X[]) new Object[size];
         stackPointer = 0;
     }
+
     // O(1) Function
     public void push(X newitem) {
         data[stackPointer++] = newitem;
@@ -40,11 +41,11 @@ public class BasicStack<X> implements CustomStack<X> {
 
     /*
         O(n) Function
-        Sfrutta il metodo pop()
     */
     public X access(X item) {
         X returnValue=null;
         while (stackPointer>0){
+            // Sfrutta il metodo pop()
             returnValue=pop();
             if(returnValue.equals(item)) return returnValue;
         }

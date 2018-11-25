@@ -1,7 +1,10 @@
-package com.ferrero.dataStructures.stack;
+    package com.ferrero.dataStructures.stack;
 
 public class CardStackApp {
-    // Notare l'uso dell'interfaccia "CustomStack" al posto della classe "BasicStack" per garantire massimo impatto sul client
+    /*
+        Notare l'uso dell'interfaccia "CustomStack" per dare la possibilità di utilizzare classi/tipologie di implementazione differenti.
+        E' possibile quindi a questo punto instanziare una delle classi che implementano tale interfaccia (e.g. BasicStack o ArrayListStack)
+     */
 	CustomStack<String> stack = new BasicStack<String>();
 
 

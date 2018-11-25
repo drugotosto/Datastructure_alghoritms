@@ -4,9 +4,8 @@ import java.util.ArrayList;
 
 public class ArrayListStack<X> implements CustomStack<X> {
 
-    // Tale array che rappresenta lo stack che contiene i generici dati di tipo "X"
+    // Array che contiene i generici dati di tipo "X" dello stack
     private ArrayList<X> data;
-
 
     public ArrayListStack() {
         this.data = new ArrayList<X>();
@@ -26,13 +25,13 @@ public class ArrayListStack<X> implements CustomStack<X> {
     }
 
     public X access(X item) {
-        X returnItem;
+        X retriveItem;
         while (data.size()>0){
-           returnItem = pop();
-           if (returnItem.equals(item)) return returnItem;
+            // Sfrutta il metodo pop()
+            retriveItem = pop();
+           if (retriveItem.equals(item)) return retriveItem;
         }
         throw  new IllegalStateException("L'elemento cercato non è presente!");
-
     }
 
     public int size() {
