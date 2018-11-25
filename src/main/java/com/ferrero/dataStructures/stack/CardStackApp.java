@@ -1,4 +1,4 @@
-package com.ferrero.data_structures.stack;
+package com.ferrero.dataStructures.stack;
 
 public class CardStackApp {
     // Notare l'uso dell'interfaccia "CustomStack" al posto della classe "BasicStack" per garantire massimo impatto sul client

@@ -1,6 +1,6 @@
 package com.ferrero;
 
-import com.ferrero.data_structures.stack.CardStackApp;
+import com.ferrero.dataStructures.stack.CardStackApp;
 
 import java.util.Arrays;
 

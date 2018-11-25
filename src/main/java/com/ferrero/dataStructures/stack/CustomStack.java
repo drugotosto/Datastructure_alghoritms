@@ -1,4 +1,4 @@
-package com.ferrero.data_structures.stack;
+package com.ferrero.dataStructures.stack;
 
 public interface CustomStack<X> {
     public void push(X newitem);

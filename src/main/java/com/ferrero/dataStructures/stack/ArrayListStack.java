@@ -1,4 +1,4 @@
-package com.ferrero.data_structures.stack;
+package com.ferrero.dataStructures.stack;
 
 import java.util.ArrayList;
 
@@ -12,6 +12,7 @@ public class ArrayListStack<X> implements CustomStack<X> {
         this.data = new ArrayList<X>();
     }
 
+    // Inserisce il nuovo elemento al fondo dell'ArrayList
     public void push(X newitem) {
         data.add(newitem);
     }
