@@ -1,7 +1,9 @@
 package com.ferrero.dataStructures.stack;
 
 import com.ferrero.dataStructures.queue.BasicQueue;
+import lombok.extern.log4j.Log4j2;
 
+@Log4j2
 public class BasicStack<X> implements CustomStack<X> {
 
     // Array che contiene i generici dati di tipo "X" dello stack
@@ -49,6 +51,7 @@ public class BasicStack<X> implements CustomStack<X> {
             returnValue=pop();
             if(returnValue.equals(item)) return returnValue;
         }
+        log.warn("L'elemento cercato {} non è presente!", item);
         throw  new IllegalStateException("L'elemento cercato non è presente!");
     }
 

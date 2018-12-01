@@ -1,11 +1,12 @@
 package com.ferrero.dataStructures.queue;
 
 
-import lombok.extern.java.Log;
+import lombok.extern.log4j.Log4j2;
+
 /**
  * Created by Maurizio on 25/11/2018.
  */
-@Log
+@Log4j2
 public class BasicQueue<X> implements CustomQueue<X>{
 
     // Array circolare che contiene i generici dati di tipo "X" della queue
@@ -37,7 +38,7 @@ public class BasicQueue<X> implements CustomQueue<X>{
     public void enQueue(X item){
         // Controllo che ci sia ancora spazio all'interno dell'array
         if ((tail>=size()) && (tail+1) % data.length >= head) {
-            log.warning("ATTENZIONE: Non c'è più spazio nella queue!");
+            log.warn("ATTENZIONE: Non c'è più spazio nella queue!");
             throw new IllegalStateException("Non c'è più spazio all'interno della queue!");
         }
         else if(this.size()>0) {
@@ -63,10 +64,10 @@ public class BasicQueue<X> implements CustomQueue<X>{
             returnValue=data[head];
             data[head]=null;
             head=tail=-1;
-            log.warning("ATTENZIONE: Ho prelevato l'ultimo elemento della queue!");
+            log.warn("ATTENZIONE: Ho prelevato l'ultimo elemento della queue!");
         }
         else{
-            log.warning("ATTENZIONE: Non ci sono più elementi nella queue!");
+            log.warn("ATTENZIONE: Non ci sono più elementi nella queue!");
             throw new IllegalStateException("Non ci sono items all'interno dello stack!");
         }
         return returnValue;
@@ -80,14 +81,14 @@ public class BasicQueue<X> implements CustomQueue<X>{
             }
             return false;
         }
-        log.warning("ATTENZIONE: La queue è vuota!");
+        log.warn("ATTENZIONE: La queue è vuota!");
         throw new IllegalStateException("La Queue è vuota");
     }
 
     // O(n) Function
     public X access(int position) {
         if (size()==0 || position>size()) {
-            log.warning("ATTENZIONE: Non ci sono elementi validi per la data posizione all'interno della queue!");
+            log.warn("ATTENZIONE: Non ci sono elementi validi per la posizione {} all'interno della queue!",position);
             throw new IllegalStateException("La Queue è vuota");
         }
 
